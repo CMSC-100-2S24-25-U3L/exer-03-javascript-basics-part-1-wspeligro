@@ -57,13 +57,16 @@ function reversePassword(string){ /* function to reverse string */
 }
 
 function storePassword(name, passwordOne, passwordTwo){ /* function for storing password */
-    
+    let newPassword;
+    if (validatePassword(passwordOne, passwordTwo)){
+        newPassword = reversePassword(passwordOne);
+    }else{
+        newPassword = passwordOne;
+    }
+
+    return { name, newPassword };
 }
 
 /* testing */
-/*
 console.log(storePassword("John", "Pass1234", "Pass1234"));
 console.log(storePassword("John", "Pass123", "Pass12345"));
-*/
-
-console.log(reversePassword("Pass123"));
