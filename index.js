@@ -47,7 +47,13 @@ function validatePassword(stringOne, stringTwo){ /* function to validate passwor
 }
 
 function reversePassword(string){ /* function to reverse string */
-    
+    /* empty string for the reverse string */
+    let reverse = "";
+    /* loop through the string and add each index in the new empty string "reverse" */
+    for (let i = string.length - 1; i >= 0; i--){
+        reverse += string[i];
+    }
+    return reverse;
 }
 
 function storePassword(name, passwordOne, passwordTwo){ /* function for storing password */
@@ -60,5 +66,4 @@ console.log(storePassword("John", "Pass1234", "Pass1234"));
 console.log(storePassword("John", "Pass123", "Pass12345"));
 */
 
-console.log(validatePassword("Pass123", "Pass12345"));
-console.log(validatePassword("Pass1234", "Pass1234"));
+console.log(reversePassword("Pass123"));
